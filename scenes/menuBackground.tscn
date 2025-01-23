@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvouue54v4a8w"]
+
+[ext_resource type="Texture2D" uid="uid://cokcio1x5p0hj" path="res://Assets/AdobeStock_718587166.png" id="1_g0h6u"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AdobeStock718587166" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.374349, 0.31543)
+texture = ExtResource("1_g0h6u")

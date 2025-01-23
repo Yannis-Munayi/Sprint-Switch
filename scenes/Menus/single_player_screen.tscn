@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbtgpsp5r0r3g"]
+
+[ext_resource type="PackedScene" uid="uid://cvouue54v4a8w" path="res://scenes/menuBackground.tscn" id="1_w68xi"]
+[ext_resource type="Script" path="res://scripts/Menus/single_player_screen.gd" id="1_wbyy0"]
+[ext_resource type="FontFile" uid="uid://dl7odshvd5bgn" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_ak4id"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtd4q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivmns"]
+bg_color = Color(0.160784, 0.192157, 0.372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c08yr"]
+bg_color = Color(0.160784, 0.192157, 0.372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nvw8w"]
+bg_color = Color(0.160784, 0.192157, 0.372549, 1)
+
+[node name="single_player_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wbyy0")
+
+[node name="Node2D" parent="." instance=ExtResource("1_w68xi")]
+z_index = -999
+scale = Vector2(2, 2)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.5
+offset_top = -134.0
+offset_right = 350.5
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qtd4q")
+
+[node name="Story" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -46.0
+offset_right = 145.0
+offset_bottom = 46.0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ivmns")
+text = "Story Mode"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -46.0
+offset_right = 72.5
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c08yr")
+text = "idk"
+
+[node name="Speed run" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -46.0
+offset_bottom = 46.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_nvw8w")
+text = "Speed Run"
+
+[node name="Screen Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -411.5
+offset_top = -216.0
+offset_right = 411.5
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ak4id")
+theme_override_font_sizes/font_size = 70
+text = "Single Player
+"

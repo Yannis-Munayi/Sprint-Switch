@@ -1,0 +1,14 @@
+Node2D
+Node
+CollisionShape2D
+AnimatedSprite2D
+CharacterBody2D
+Label
+Camera2D
+Button
+Panel
+VBoxContainer
+MenuBar
+Timer
+Area2D
+RigidBody2D
