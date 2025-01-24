@@ -2,7 +2,7 @@ extends Node2D
 
 # Variables for the tilemap and the player
 @onready var tilemap: TileMap = $"../TileMap"
-@onready var player: CharacterBody2D = $"../Level Template/Base_Player/Player1"
+@onready var player: CharacterBody2D = $"../Level Template/Player Skeletton/MultPlayer"
 
 # Tileset details
 var tile_size : int = 64
