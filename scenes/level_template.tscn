@@ -17,12 +17,12 @@
 
 [node name="Level Template" type="Node"]
 
-[node name="Base_Player" parent="." instance=ExtResource("8_wdhln")]
+[node name="Player Skeletton" parent="." instance=ExtResource("8_wdhln")]
 
-[node name="MultPlayer" parent="Base_Player" instance=ExtResource("2_1vm1x")]
+[node name="MultPlayer" parent="Player Skeletton" instance=ExtResource("2_1vm1x")]
 visible = true
 
-[node name="Player1" parent="Base_Player" instance=ExtResource("3_wpjwg")]
+[node name="Player1" parent="Player Skeletton" instance=ExtResource("3_wpjwg")]
 visible = false
 z_index = 99
 texture_filter = 1
@@ -32,7 +32,7 @@ collision_layer = 6
 wall_min_slide_angle = 0.0
 script = ExtResource("6_lau26")
 
-[node name="Player_2" parent="Base_Player" instance=ExtResource("5_6ug13")]
+[node name="Player_2" parent="Player Skeletton" instance=ExtResource("5_6ug13")]
 visible = false
 texture_filter = 1
 position = Vector2(-7, 0.25)
@@ -40,7 +40,7 @@ scale = Vector2(3, 3)
 collision_layer = 6
 script = ExtResource("6_hj8nv")
 
-[node name="player3" parent="Base_Player" instance=ExtResource("7_o0gdt")]
+[node name="player3" parent="Player Skeletton" instance=ExtResource("7_o0gdt")]
 visible = false
 texture_filter = 1
 position = Vector2(-7, 0.25)
@@ -48,10 +48,10 @@ scale = Vector2(3, 3)
 collision_layer = 6
 script = ExtResource("8_pd2bi")
 
-[node name="Camera Movement" parent="Base_Player" instance=ExtResource("9_plef4")]
+[node name="Camera Movement" parent="Player Skeletton" instance=ExtResource("9_plef4")]
 script = ExtResource("4_6o0qy")
 
-[node name="Camera2D" type="Camera2D" parent="Base_Player/Camera Movement"]
+[node name="Camera2D" type="Camera2D" parent="Player Skeletton/Camera Movement"]
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-1.04904e-05, 1.04308e-07)
@@ -62,24 +62,24 @@ position_smoothing_speed = 130.0
 rotation_smoothing_enabled = true
 script = ExtResource("2_q6g3y")
 
-[node name="Left Kill Zone" parent="Base_Player/Camera Movement/Camera2D" instance=ExtResource("1_vhjor")]
+[node name="Left Kill Zone" parent="Player Skeletton/Camera Movement/Camera2D" instance=ExtResource("1_vhjor")]
 texture_filter = 1
 position = Vector2(-64.3333, 0.333332)
 scale = Vector2(0.333333, 0.333333)
 script = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base_Player/Camera Movement/Camera2D/Left Kill Zone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Skeletton/Camera Movement/Camera2D/Left Kill Zone"]
 texture_filter = 1
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_8pxiv")
 
-[node name="Right Kill Zone" parent="Base_Player/Camera Movement/Camera2D" instance=ExtResource("1_vhjor")]
+[node name="Right Kill Zone" parent="Player Skeletton/Camera Movement/Camera2D" instance=ExtResource("1_vhjor")]
 texture_filter = 1
 position = Vector2(64, 0.111111)
 scale = Vector2(0.111111, 0.111111)
 script = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Base_Player/Camera Movement/Camera2D/Right Kill Zone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Skeletton/Camera Movement/Camera2D/Right Kill Zone"]
 texture_filter = 1
 rotation = 4.71239
 shape = SubResource("WorldBoundaryShape2D_8pxiv")

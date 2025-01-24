@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbtgpsp5r0r3g"]
 
-[ext_resource type="PackedScene" uid="uid://cvouue54v4a8w" path="res://scenes/menuBackground.tscn" id="1_w68xi"]
-[ext_resource type="Script" path="res://scripts/Menus/single_player_screen.gd" id="1_wbyy0"]
-[ext_resource type="FontFile" uid="uid://dl7odshvd5bgn" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_ak4id"]
+[ext_resource type="PackedScene" uid="uid://cvouue54v4a8w" path="res://Switch-Sprint/scenes/menuBackground.tscn" id="1_w68xi"]
+[ext_resource type="Script" path="res://Switch-Sprint/scripts/Menus/single_player_screen.gd" id="1_wbyy0"]
+[ext_resource type="FontFile" uid="uid://dl7odshvd5bgn" path="res://Switch-Sprint/Assets/fonts/PixelOperator8-Bold.ttf" id="2_ak4id"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtd4q"]
 
