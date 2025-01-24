@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://b6gxvuskskdh0"]
 
-[ext_resource type="Texture2D" uid="uid://ul7al05ymrl5" path="res://Assets/sprites/coin.png" id="1_kui5h"]
-[ext_resource type="Script" path="res://scripts/coin.gd" id="1_wtu5o"]
-[ext_resource type="AudioStream" uid="uid://bhx82783r5xv3" path="res://Assets/sounds/coin.wav" id="3_chbq3"]
+[ext_resource type="Texture2D" uid="uid://ul7al05ymrl5" path="res://Switch-Sprint/Assets/sprites/coin.png" id="1_kui5h"]
+[ext_resource type="Script" path="res://Switch-Sprint/scripts/coin.gd" id="1_wtu5o"]
+[ext_resource type="AudioStream" uid="uid://bhx82783r5xv3" path="res://Switch-Sprint/Assets/sounds/coin.wav" id="3_chbq3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_omgby"]
 atlas = ExtResource("1_kui5h")
@@ -222,7 +222,6 @@ shape = SubResource("CircleShape2D_hq88y")
 [node name="Pick up" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_chbq3")
 autoplay = true
-bus = &"Sfx"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
