@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpgr70xh4u1ju"]
+[gd_scene load_steps=5 format=3 uid="uid://dpgr70xh4u1ju"]
 
 [ext_resource type="PackedScene" uid="uid://636pxni4vlrd" path="res://Switch-Sprint/scenes/level_template.tscn" id="1_bvmc3"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/LevelGenerator.gd" id="2_ggi2a"]
 [ext_resource type="Texture2D" uid="uid://du22at4chmth3" path="res://Switch-Sprint/Assets/sprites/world_tileset.png" id="2_qifjm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hnp27"]
@@ -202,6 +201,3 @@ offset_bottom = -63.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Press F"
-
-[node name="Generate" type="Node2D" parent="."]
-script = ExtResource("2_ggi2a")

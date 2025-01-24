@@ -53,7 +53,7 @@ func generate_level():
 			previous_row = y_pos
 			x_pos += gap_size
 
-			generate_background(x_pos - platform_length - gap_size, x_pos)
+            #generate_background(x_pos - platform_length - gap_size, x_pos)
 
 		else:
 			x_pos += 1  # Skip the premade platform's x range
@@ -64,7 +64,7 @@ func generate_level():
 func generate_background(start_x, end_x):
 	for x in range(start_x, end_x):
 		for y in range(-10, 10):  # Adjust the vertical range as needed
-			tilemap.set_cell(0, Vector2i(x, y), 0, Vector2i(0,11), 0)  # Layer 0 for Background
+			tilemap.set_cell(0, Vector2i(x, y), background_tile_id, background_atlas_coords, 0)  # Layer 0 for Background
 
 func _process(delta):
 	if player.position.x > last_generated_x - generation_buffer:
