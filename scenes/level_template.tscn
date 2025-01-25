@@ -72,14 +72,3 @@ script = null
 texture_filter = 1
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_8pxiv")
-
-[node name="Right Kill Zone" parent="Player Skeletton/Camera Movement/Camera2D" instance=ExtResource("1_vhjor")]
-texture_filter = 1
-position = Vector2(64, 0.111111)
-scale = Vector2(0.111111, 0.111111)
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Skeletton/Camera Movement/Camera2D/Right Kill Zone"]
-texture_filter = 1
-rotation = 4.71239
-shape = SubResource("WorldBoundaryShape2D_8pxiv")

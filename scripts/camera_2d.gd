@@ -4,7 +4,7 @@ extends Camera2D
 @onready var top_kill_zone: Area2D = $"../../../Kill Zones/Top Kill Zone"
 @onready var player: CharacterBody2D = $"../../MultPlayer"
 @onready var camera_base_player: CharacterBody2D = $".."
-
+ #TODO: everything crashes after 53 sec
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y = 0
