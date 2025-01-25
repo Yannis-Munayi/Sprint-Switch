@@ -29,7 +29,7 @@ var premade_platform_x_range: Vector2 = Vector2(0, 0)  # Adjust this to match yo
 func generate_level():
 	var x_pos = last_generated_x
 	if get_window().mode == 0:
-		min_row = 4
+		min_row = -7
 		max_row = 4
 		#rint(player.position.x) # -7
 	elif get_window().mode == 2:
