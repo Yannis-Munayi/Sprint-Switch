@@ -22,7 +22,7 @@ var max_row : int = 0
 
 # Track previous row
 var previous_row : int = 8  # Initial row
-
+var generation_count : int = 0
 
 var premade_platform_x_range: Vector2 = Vector2(0, 0)  # Adjust this to match your premade platform's x range
 
@@ -30,7 +30,7 @@ func generate_level():
 	var x_pos = last_generated_x
 	if get_window().mode == 0:
 		min_row = -7
-		max_row = 4
+		max_row = 6
 		#rint(player.position.x) # -7
 	elif get_window().mode == 2:
 		min_row = 10
@@ -60,15 +60,23 @@ func generate_level():
 			x_pos += 1  # Skip the premade platform's x range
 
 	last_generated_x = x_pos
+	generation_count= x_pos
 
 # Function to generate background
 func generate_background(start_x, end_x):
 	for x in range(start_x, end_x):
 		for y in range(-10, 10):  # Adjust the vertical range as needed
-			tilemap.set_cell(0, Vector2i(x, y), 0, Vector2i(0,11), 0)  # Layer 0 for Background
-
+			tilemap.set_cell(0, Vector2i(x, y), 0, Vector2i(0,11), 0)  # Layer 0 for Background	
+	
 func _process(delta):
+	if generation_count - generation_buffer >= 2000:
+		last_generated_x = 0
+		generation_buffer = 1
+		generate_level()
+		generation_count = 0
+		
 	if player.position.x > last_generated_x - generation_buffer:
+		print(last_generated_x - generation_buffer)
 		generate_level()
 
 func _ready():

@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://636pxni4vlrd"]
+[gd_scene load_steps=12 format=3 uid="uid://636pxni4vlrd"]
 
-[ext_resource type="PackedScene" uid="uid://dgoalvr1u3n5c" path="res://Switch-Sprint/scenes/kill_zone.tscn" id="1_vhjor"]
 [ext_resource type="PackedScene" uid="uid://b0ey48pi66kyk" path="res://mult_player.tscn" id="2_1vm1x"]
 [ext_resource type="Script" path="res://Switch-Sprint/scripts/camera_2d.gd" id="2_q6g3y"]
 [ext_resource type="PackedScene" uid="uid://bqwjgydso5cn7" path="res://Switch-Sprint/scenes/Players/player1.tscn" id="3_wpjwg"]
@@ -12,8 +11,6 @@
 [ext_resource type="Script" path="res://Switch-Sprint/scripts/player_3.gd" id="8_pd2bi"]
 [ext_resource type="PackedScene" uid="uid://b7i01c5bmo174" path="res://Switch-Sprint/scenes/base_player.tscn" id="8_wdhln"]
 [ext_resource type="PackedScene" uid="uid://bcr32ln6l4the" path="res://Switch-Sprint/scenes/camera_movement.tscn" id="9_plef4"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8pxiv"]
 
 [node name="Level Template" type="Node"]
 
@@ -61,14 +58,3 @@ position_smoothing_enabled = true
 position_smoothing_speed = 130.0
 rotation_smoothing_enabled = true
 script = ExtResource("2_q6g3y")
-
-[node name="Left Kill Zone" parent="Player Skeletton/Camera Movement/Camera2D" instance=ExtResource("1_vhjor")]
-texture_filter = 1
-position = Vector2(-64.3333, 0.333332)
-scale = Vector2(0.333333, 0.333333)
-script = null
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player Skeletton/Camera Movement/Camera2D/Left Kill Zone"]
-texture_filter = 1
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_8pxiv")

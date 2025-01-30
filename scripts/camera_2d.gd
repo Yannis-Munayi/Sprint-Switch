@@ -25,7 +25,8 @@ func _process(delta: float) -> void:
 	elif get_window().mode == 0:
 		# Adds the bottom kill zone
 		if player.GRA.x >= 70:
-			died()
+			#died()
+			pass
 			
 		if round(camera_base_player.position.x - player.position.x) <= -210:
 			died()
