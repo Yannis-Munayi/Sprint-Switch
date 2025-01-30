@@ -12,7 +12,7 @@ var ground_atlas_coords : Vector2i = Vector2i(0, 0)  # Atlas coordinates (0,0)
 # Level generation settings
 var min_platform_length : int = 3
 var max_platform_length : int = 10
-var gap_size : int = 0
+var gap_size : int = 1
 var generation_buffer : int = 500  # Distance to player at which to generate more platforms
 var last_generated_x : int = 0  # Last generated x position
 
@@ -29,8 +29,8 @@ var premade_platform_x_range: Vector2 = Vector2(0, 0)  # Adjust this to match yo
 func generate_level():
 	var x_pos = last_generated_x
 	if get_window().mode == 0:
-		min_row = -7
-		max_row = 6
+		min_row = -7 #-7
+		max_row = 6 #6
 		#rint(player.position.x) # -7
 	elif get_window().mode == 2:
 		min_row = 10
@@ -45,6 +45,7 @@ func generate_level():
 				if abs(y_pos - previous_row) == 2:
 					alternative_tile = 1
 				tilemap.set_cell(0, Vector2i(x_pos, y_pos), ground_tile_id, ground_atlas_coords, alternative_tile)
+				#print(tilemap.get_cell_atlas_coords(0,Vector2i(x_pos,y_pos)))
 				
 				# Optionally add tiles underneath
 				if randi() % 2 == 0:  # 50% chance to add a tile underneath
@@ -71,12 +72,11 @@ func generate_background(start_x, end_x):
 func _process(delta):
 	if generation_count - generation_buffer >= 2000:
 		last_generated_x = 0
-		generation_buffer = 1
-		generate_level()
+		generation_buffer = 1/500
+		#generate_background(0,500)
 		generation_count = 0
 		
 	if player.position.x > last_generated_x - generation_buffer:
-		print(last_generated_x - generation_buffer)
 		generate_level()
 
 func _ready():
