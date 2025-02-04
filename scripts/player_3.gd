@@ -1,5 +1,6 @@
 extends CharacterBody2D
 # 3
+# TODO: The player cannot unshrink when un between tight places
 const SPEED : float= 130.0
 const JUMP_VELOCITY : float = -300.0
 var INVERT_VELOCITY : int = 300
