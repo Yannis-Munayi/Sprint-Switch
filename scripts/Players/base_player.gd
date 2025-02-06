@@ -17,7 +17,6 @@ var is_shrunk : bool = false
 func _physics_process(delta: float) -> void:
 	camera_2d.position.y = 0
 	
-	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += GRA * delta

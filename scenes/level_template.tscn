@@ -1,20 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://636pxni4vlrd"]
+[gd_scene load_steps=13 format=3 uid="uid://636pxni4vlrd"]
 
 [ext_resource type="PackedScene" uid="uid://b0ey48pi66kyk" path="res://mult_player.tscn" id="2_1vm1x"]
+[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/PlayerSkeleton.gd" id="2_35grx"]
 [ext_resource type="Script" path="res://Switch-Sprint/scripts/camera_2d.gd" id="2_q6g3y"]
 [ext_resource type="PackedScene" uid="uid://bqwjgydso5cn7" path="res://Switch-Sprint/scenes/Players/player1.tscn" id="3_wpjwg"]
 [ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/base_player.gd" id="4_6o0qy"]
 [ext_resource type="PackedScene" uid="uid://dhw5ci1fgl5gj" path="res://Switch-Sprint/scenes/Players/player_2.tscn" id="5_6ug13"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/player_2.gd" id="6_hj8nv"]
+[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/player_2.gd" id="6_hj8nv"]
 [ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/player_1.gd" id="6_lau26"]
 [ext_resource type="PackedScene" uid="uid://jt37txn30o4o" path="res://Switch-Sprint/scenes/Players/player_3.tscn" id="7_o0gdt"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/player_3.gd" id="8_pd2bi"]
+[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/player_3.gd" id="8_pd2bi"]
 [ext_resource type="PackedScene" uid="uid://b7i01c5bmo174" path="res://Switch-Sprint/scenes/base_player.tscn" id="8_wdhln"]
 [ext_resource type="PackedScene" uid="uid://bcr32ln6l4the" path="res://Switch-Sprint/scenes/camera_movement.tscn" id="9_plef4"]
 
 [node name="Level Template" type="Node"]
 
 [node name="Player Skeletton" parent="." instance=ExtResource("8_wdhln")]
+script = ExtResource("2_35grx")
 
 [node name="MultPlayer" parent="Player Skeletton" instance=ExtResource("2_1vm1x")]
 visible = true

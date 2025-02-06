@@ -12,7 +12,7 @@ var ground_atlas_coords : Vector2i = Vector2i(0, 0)  # Atlas coordinates (0,0)
 # Level generation settings
 var min_platform_length : int = 3
 var max_platform_length : int = 10
-var gap_size : int = 1
+var gap_size : int = 0
 var generation_buffer : int = 10  # Distance to player at which to generate more platforms
 var last_generated_x : int = 0  # Last generated x position
 
@@ -31,8 +31,8 @@ func generate_level():
 	print(count)
 	var x_pos = last_generated_x
 	if get_window().mode == 0:
-		min_row = -7 #-7
-		max_row = 6 #6
+		min_row = 4 #-7
+		max_row = 4 #6
 		#rint(player.position.x) # -7
 	elif get_window().mode == 2:
 		min_row = 10
