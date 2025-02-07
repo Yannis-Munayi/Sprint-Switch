@@ -19,7 +19,6 @@
 script = ExtResource("2_35grx")
 
 [node name="MultPlayer" parent="Player Skeletton" instance=ExtResource("2_1vm1x")]
-visible = true
 
 [node name="Player1" parent="Player Skeletton" instance=ExtResource("3_wpjwg")]
 visible = false

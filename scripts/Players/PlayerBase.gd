@@ -1,8 +1,5 @@
 extends CharacterBody2D
 
-@onready var player_1: CharacterBody2D = $"Player Skeletton/Player1"
-@onready var mult_player: CharacterBody2D = $"Player Skeletton/MultPlayer"
-
 # Shared constants
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -17,20 +14,15 @@ var is_shrunk: bool = false
 # Shared nodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-
+	
 func _physics_process(delta: float) -> void:
+	
 	handle_gravity(delta)
 	handle_jumping()
 	handle_movement()
 	handle_animation()
 	move_and_slide()
-	
-	var current_scene = get_tree().current_scene
-	
-	if current_scene != "multiplayer_level":
-		handle_switching()
-		player_1.visible = true
-		mult_player.visible = false
+	handle_switching()
 
 func handle_gravity(delta: float) -> void:
 	if not is_on_floor():
