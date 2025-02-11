@@ -19,7 +19,8 @@ func _physics_process(delta: float) -> void:
 	
 	handle_gravity(delta)
 	handle_jumping()
-	handle_movement()
+	handle_basic_movement()
+	handle_advanced_movement()
 	handle_animation()
 	move_and_slide()
 	handle_switching()
@@ -42,9 +43,28 @@ func handle_switching() -> void:
 		GRA.y *= -1
 		animated_sprite_2d.flip_v = not animated_sprite_2d.flip_v
 
-func handle_movement() -> void:
+func handle_basic_movement() -> void:
 	direction = 1
 	velocity.x = direction * SPEED if direction else move_toward(velocity.x, 0, SPEED)
+	
+func handle_advanced_movement() -> void:
+	moving = Input.get_axis("move_left", "move_right")
+	if moving:
+		direction = moving
+		if direction == 1:
+			direction = 2
+	else:
+		direction = 1
+	# Flips the character when moving left or right
+	if direction >0:
+		animated_sprite_2d.flip_h = false
+	elif direction < 0:
+		animated_sprite_2d.flip_h = true
+		
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 func handle_animation() -> void:
 	if is_on_floor() or is_on_ceiling():

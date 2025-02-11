@@ -26,6 +26,6 @@ func _physics_process(delta: float) -> void:
 # Adds functionality to player 1
 	handle_gravity(delta)
 	handle_switching()
-	handle_movement()
+	handle_basic_movement()
 	handle_animation()
 	move_and_slide()
