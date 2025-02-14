@@ -10,12 +10,25 @@ var GRA = Vector2(0, 980)
 var moving: float
 var direction: int
 var is_shrunk: bool = false
+@onready var player_1: CharacterBody2D = $"Player Skeletton/Player1"
+@onready var mult_player: CharacterBody2D = $"Player Skeletton/MultPlayer"
+@onready var player_2: CharacterBody2D = $"Player Skeletton/Player_2"
+@onready var player_3: CharacterBody2D = $"Player Skeletton/player3"
 
 # Shared nodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 	
 func _physics_process(delta: float) -> void:
+	var current_scene = get_tree().current_scene
+	if str(current_scene) == "Multiplayer Level:<Node2D#32732349711>":	
+		player_1.visible = false
+		mult_player.visible = true
+	else:
+		print(0)
+		mult_player.visible = false
+		if player_2.visible == false and player_3.visible == false:
+			player_1.visible = true
 	
 	handle_gravity(delta)
 	handle_jumping()
