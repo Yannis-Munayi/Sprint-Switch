@@ -1,6 +1,7 @@
 # Sprint Switch
 
-##Plan
+## Plan
+
 That sounds like an exciting project! Your 2D sidescroller, Switch-Sprint, inspired by Gravity Guy with gravity inversion as a core mechanic, has a lot of potential for engaging gameplay, especially with the high-score-driven arcade style and a story mode featuring three characters with unique abilities (moving left/right, jumping, shrinking, and possibly slowing time). Distributing the introduction of characters and abilities across 90 levels in a way that feels rewarding and paced well is a great challenge, and I’m happy to help you plan this out. I’ll also suggest additional content to enhance the game’s depth and replayability, drawing on the context of your project (e.g., the Godot-based development, PlayerBase.gd, and the multi-character switching mechanic) and your goal of a 90-level story mode.
 
 Game Overview
@@ -9,20 +10,22 @@ Based on your description and prior conversations:
 Core Mechanic: Gravity inversion (similar to Gravity Guy), where players flip gravity to navigate platforms and obstacles.
 Game Mode: Story mode with 90 levels, focusing on progressing through levels to unlock abilities and switch between three characters.
 Characters: Three main characters (Player_1, Player_2, player3, plus potentially MultPlayer as a base), each with unique abilities.
-Current Abilities:
+
+### Current Abilities:
 Moving left/right (basic movement).
 Jumping.
 Shrinking (reduces player size for tight spaces).
 Slowing time (potential future ability).
 Objective: Reach a high score in each level, with no chasing enemies (unlike Gravity Guy), focusing on platforming challenges and obstacle navigation.
 Level Design: Levels should introduce abilities and characters gradually—ideally at a good pace, with increasing complexity over 90 levels.
-Step 1: Structuring 90 Levels
+
+#### Step 1: Structuring 90 Levels
 To distribute the game’s content across 90 levels, we need a progression that feels natural, introduces mechanics gradually, and keeps players engaged. I’ll break this into phases (e.g., acts or chapters) to organize the introduction of characters, abilities, and increasing difficulty. Each phase can span 15–30 levels, with clear milestones (e.g., new character, new ability, boss level).
 
 Progression Framework
 I propose dividing the 90 levels into 6 acts, each with 15 levels, balancing the introduction of characters, abilities, and difficulty spikes. Here’s a suggested structure:
 
-Act 1: Basics and First Character (Levels 1–15)
+ ### Act 1: Basics and First Character (Levels 1–15)
 Focus: Introduce the core mechanic (gravity inversion) and the first character (Player_1).
 Abilities Introduced:
 Gravity Inversion (Level 1): Players learn to flip gravity to navigate simple platforms.
@@ -34,7 +37,8 @@ Gradually increase platform density and introduce moving platforms by Level 10.
 Level 15: Mini-boss or challenge level (e.g., a longer level requiring multiple gravity flips to reach a goal).
 Story Beat: Introduce Player_1 as the protagonist in a sci-fi/fantasy world where gravity anomalies are destabilizing the environment. Their goal is to collect “Gravity Shards” to restore balance.
 Difficulty: Easy, with generous checkpoints and low penalty for failure.
-Act 2: Jumping and Second Character (Levels 16–30)
+
+### Act 2: Jumping and Second Character (Levels 16–30)
 Focus: Add jumping and introduce the second character (Player_2).
 Abilities Introduced:
 Jumping (Level 16): Allows players to cross gaps or reach higher platforms without gravity inversion.
@@ -46,7 +50,8 @@ Add hazards like spikes or laser beams that force precise gravity/jump timing.
 Level 30: Challenge level combining movement, jumping, and switching (e.g., a gauntlet with alternating platforms and gaps).
 Story Beat: Player_2 joins the quest, revealing a rival faction controlling Gravity Shards. The two characters have complementary skills to counter new threats.
 Difficulty: Medium, with tighter platforming and occasional death traps.
-Act 3: Shrinking and Third Character (Levels 31–45)
+
+### Act 3: Shrinking and Third Character (Levels 31–45)
 Focus: Introduce shrinking and the third character (player3).
 Abilities Introduced:
 Shrinking (Level 31): Allows players to pass through narrow gaps or avoid low obstacles.
@@ -58,10 +63,11 @@ Introduce puzzles requiring specific character abilities (e.g., player3 shrinks 
 Level 45: Mid-game boss level (e.g., a large obstacle course requiring all three characters’ abilities to progress).
 Story Beat: player3 is a rogue agent who initially opposes the team but joins after a pivotal event (e.g., saving them from a trap). The team learns the Gravity Shards are part of a larger machine.
 Difficulty: Medium-hard, with more complex layouts and stricter timing.
-Act 4: Slowing Time (Levels 46–60)
+
+### Act 4: Slowing Time (Levels 46–60)
 Focus: Introduce slowing time as a universal ability and increase challenge density.
 Abilities Introduced:
-Slow Time (Level 46): Temporarily slows game speed (e.g., 0.5x speed for 5 seconds) to navigate fast-moving obstacles or tight sequences.
+Slow Time (Level 46): Temporarily slows game speed (e.g., 0.5x speed for 5 seconds game speeds by 1.25x after) to navigate fast-moving obstacles or tight sequences.
 Level Design:
 Add fast-moving hazards (e.g., spinning blades, collapsing platforms) that require slow time.
 Increase switching frequency (e.g., rapid switches between characters to use their unique abilities).
@@ -69,34 +75,39 @@ Introduce environmental effects (e.g., wind pushing the player, requiring counte
 Level 60: Challenge level with a high-density obstacle course (e.g., a “speedrun” level testing all abilities).
 Story Beat: The team discovers the machine’s location but faces a time-manipulating guardian. Slowing time is a shard-powered ability they unlock to counter it.
 Difficulty: Hard, with precise inputs and fewer checkpoints.
-Act 5: Mastery and Combinations (Levels 61–75)
+
+### Act 5: Mastery and Combinations (Levels 61–75)
 Focus: Combine all abilities in creative ways, with no new mechanics but deeper complexity.
 Abilities: All available (gravity inversion, move left/right, jumping, shrinking, slow time).
 Level Design:
 Complex levels requiring chained mechanics (e.g., shrink, jump, flip gravity, slow time to pass a laser grid).
 Introduce optional challenges for bonus points (e.g., collect hidden Gravity Shards within a time limit).
 Add dynamic environments (e.g., platforms that toggle gravity automatically).
+
 Level 75: Penultimate boss level (e.g., a multi-phase challenge requiring all characters to disable a Gravity Shard-powered trap).
 Story Beat: The team infiltrates the enemy stronghold, facing increasingly chaotic gravity anomalies. They uncover the machine’s purpose: to reshape the world’s physics.
 Difficulty: Very hard, with minimal forgiveness and intricate level design.
-Act 6: Climax and Endgame (Levels 76–90)
+
+### Act 6: Climax and Endgame (Levels 76–90)
 Focus: Culminate in epic challenges and a satisfying conclusion.
 Abilities: All available, with mastery expected.
 Level Design:
 Massive, multi-stage levels combining all mechanics in unpredictable ways.
 Introduce “remix” levels that revisit early layouts with new twists (e.g., Level 1 but with fast hazards and shrinking tunnels).
 Add score-based objectives (e.g., beat a level under a time limit for extra points).
+
 Level 90: Final boss level (e.g., a sentient Gravity Machine that manipulates gravity, time, and obstacles, requiring all characters to disable its core).
 Story Beat: The team destroys the machine, stabilizes gravity, and restores the world. A post-credits scene teases a potential sequel (e.g., a new anomaly appearing).
 Difficulty: Expert, designed for players who’ve mastered all mechanics.
 Step 2: Pacing Abilities and Characters
 To ensure abilities and characters are introduced at a “good pace”:
 
-Characters:
+## Characters:
 Player_1: Level 1 (immediate introduction to establish the protagonist).
 Player_2: Level 18 (after players are comfortable with gravity and jumping, adding switching).
 player3: Level 33 (mid-game, when switching is familiar, adding complexity).
-Abilities:
+
+## Abilities:
 Move Left/Right: Level 1 (core mechanic, immediate).
 Gravity Inversion: Level 1 (core mechanic, immediate).
 Jumping: Level 16 (after gravity mastery, adds verticality).
@@ -107,6 +118,7 @@ Early levels (1–15) focus on core mechanics to build confidence.
 Mid-game (16–45) introduces switching and new abilities to deepen strategy.
 Late-game (46–90) leverages all abilities for complex, rewarding challenges.
 Spacing abilities ~15 levels apart ensures players master each before the next arrives.
+
 Step 3: Suggested Additional Content
 To flesh out Switch-Sprint across 90 levels and enhance replayability, here are content ideas that align with your vision and add variety:
 
