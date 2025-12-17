@@ -10,22 +10,25 @@ var GRA = Vector2(0, 980)
 var moving: float
 var direction: int
 var is_shrunk: bool = false
-@onready var player_1: CharacterBody2D = $"Player Skeletton/Player1"
-@onready var mult_player: CharacterBody2D = $"Player Skeletton/MultPlayer"
-@onready var player_2: CharacterBody2D = $"Player Skeletton/Player_2"
-@onready var player_3: CharacterBody2D = $"Player Skeletton/player3"
+
+@onready var mult_player: CharacterBody2D = $"."
+
+@onready var player_1: CharacterBody2D = $"../Player Skeletton/Player1"
+@onready var player_2: CharacterBody2D = $"../Player Skeletton/Player_2"
+@onready var player_3: CharacterBody2D = $"../Player Skeletton/player3"
 
 # Shared nodes
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-	
+
+
 func _physics_process(delta: float) -> void:
 	var current_scene = get_tree().current_scene
 	if str(current_scene) == "Multiplayer Level:<Node2D#32732349711>":	
 		player_1.visible = false
 		mult_player.visible = true
+		
 	else:
-		print(0)
 		mult_player.visible = false
 		if player_2.visible == false and player_3.visible == false:
 			player_1.visible = true
@@ -46,15 +49,21 @@ func handle_jumping() -> void:
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor() and not animated_sprite_2d.flip_v:
 			velocity.y = JUMP_VELOCITY
+			GRA.x +=1
+		"""
 		elif is_on_ceiling() and animated_sprite_2d.flip_v:
 			velocity.y = JUMP_VELOCITY * -1
+			GRA.x +=1
+		"""
 
 func handle_switching() -> void:
 	if Input.is_action_just_pressed("invert_gravity") and (is_on_ceiling() or is_on_floor()):
 		INVERT_VELOCITY *= -1
 		velocity.y = INVERT_VELOCITY
 		GRA.y *= -1
+		collision_shape_2d.position.y = collision_shape_2d.position.y * -1
 		animated_sprite_2d.flip_v = not animated_sprite_2d.flip_v
+		
 
 func handle_basic_movement() -> void:
 	direction = 1
@@ -78,15 +87,18 @@ func handle_advanced_movement() -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 
 func handle_animation() -> void:
 	if is_on_floor() or is_on_ceiling():
+		GRA.x = 0
 		if direction == 0:
 			animated_sprite_2d.play("idle")
 		else:
 			animated_sprite_2d.play("run")
 	else:
 		animated_sprite_2d.play("jump")
+		GRA.x += 1
 	animated_sprite_2d.flip_h = direction < 0
 
 func shrink() -> void:

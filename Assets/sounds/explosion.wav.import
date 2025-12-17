@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccmpecs4subs6"
-path="res://.godot/imported/explosion.wav-a99bc4048b5067d0bf4065bceb7780a4.sample"
+path="res://.godot/imported/explosion.wav-960c3b3fe696093264b84a9c395b3ac0.sample"
 
 [deps]
 
-source_file="res://Switch-Sprint/Assets/sounds/explosion.wav"
-dest_files=["res://.godot/imported/explosion.wav-a99bc4048b5067d0bf4065bceb7780a4.sample"]
+source_file="res://Sprint-Switch/Assets/sounds/explosion.wav"
+dest_files=["res://.godot/imported/explosion.wav-960c3b3fe696093264b84a9c395b3ac0.sample"]
 
 [params]
 

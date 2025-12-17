@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://chbplv0axgskm"]
 
-[ext_resource type="PackedScene" uid="uid://636pxni4vlrd" path="res://Switch-Sprint/scenes/level_template.tscn" id="1_gue4p"]
-[ext_resource type="Texture2D" uid="uid://du22at4chmth3" path="res://Switch-Sprint/Assets/sprites/world_tileset.png" id="2_v4njx"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/LevelGenerator.gd" id="3_a7dpi"]
+[ext_resource type="PackedScene" uid="uid://636pxni4vlrd" path="res://Sprint-Switch/scenes/level_template.tscn" id="1_gue4p"]
+[ext_resource type="Texture2D" uid="uid://du22at4chmth3" path="res://Sprint-Switch/Assets/sprites/world_tileset.png" id="2_v4njx"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/LevelGenerator.gd" id="3_a7dpi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dr0y"]
 texture = ExtResource("2_v4njx")

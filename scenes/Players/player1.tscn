@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bqwjgydso5cn7"]
 
-[ext_resource type="Texture2D" uid="uid://b0lfka0jei4ft" path="res://Switch-Sprint/Assets/sprites/Player1.png" id="1_6do74"]
+[ext_resource type="Texture2D" uid="uid://b0lfka0jei4ft" path="res://Sprint-Switch/Assets/sprites/Player1.png" id="1_6do74"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qfwvm"]
 atlas = ExtResource("1_6do74")
@@ -91,9 +91,10 @@ collision_layer = 2
 metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 16
+visibility_layer = 16
 z_index = 99
 texture_filter = 1
-rotation = 6.28319
 scale = Vector2(0.506508, 0.436745)
 sprite_frames = SubResource("SpriteFrames_yrxou")
 animation = &"idle"
@@ -101,6 +102,8 @@ autoplay = "idle"
 frame_progress = 0.635787
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 16
+visibility_layer = 16
 z_index = 99
 position = Vector2(0, 1.5)
 scale = Vector2(0.272, 0.320987)

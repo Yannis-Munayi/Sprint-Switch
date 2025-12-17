@@ -1,4 +1,4 @@
-extends "res://Switch-Sprint/scripts/Players/PlayerBase.gd"
+extends "res://Sprint-Switch/scripts/Players/PlayerBase.gd"
 
 func _physics_process(delta: float) -> void:
 	

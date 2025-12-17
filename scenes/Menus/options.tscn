@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://l4qvq5tjkm04"]
 
-[ext_resource type="Texture2D" uid="uid://cokcio1x5p0hj" path="res://Switch-Sprint/Assets/AdobeStock_718587166.png" id="1_epvhf"]
-[ext_resource type="Script" path="res://Switch-Sprint/scenes/Menus/options.gd" id="1_o2m63"]
+[ext_resource type="Texture2D" uid="uid://cokcio1x5p0hj" path="res://Sprint-Switch/Assets/AdobeStock_718587166.png" id="1_epvhf"]
+[ext_resource type="Script" path="res://Sprint-Switch/scenes/Menus/options.gd" id="1_o2m63"]
 
 [node name="Options" type="Control"]
 layout_mode = 3

@@ -15,21 +15,6 @@ var is_shrunk : bool = false
 @onready var camera_2d: Camera2D = $Camera2D
 
 func _physics_process(delta: float) -> void:
-	camera_2d.position.y = 0
-	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += GRA * delta
-		
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		if animated_sprite_2d.flip_v == false:
-			velocity.y = JUMP_VELOCITY
-	
-	# Allows the user to jump if on the ceiling
-	elif Input.is_action_just_pressed("jump") and is_on_ceiling():
-		if animated_sprite_2d.flip_v == true:
-			velocity.y = JUMP_VELOCITY * -1
-			
 	
 	direction = 1
 	

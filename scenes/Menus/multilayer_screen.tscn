@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dfxcqp7b3sqsd"]
 
-[ext_resource type="PackedScene" uid="uid://cvouue54v4a8w" path="res://Switch-Sprint/scenes/menuBackground.tscn" id="1_5pfvp"]
-[ext_resource type="FontFile" uid="uid://dl7odshvd5bgn" path="res://Switch-Sprint/Assets/fonts/PixelOperator8-Bold.ttf" id="2_4sdia"]
+[ext_resource type="PackedScene" uid="uid://cvouue54v4a8w" path="res://Sprint-Switch/scenes/menuBackground.tscn" id="1_5pfvp"]
+[ext_resource type="FontFile" uid="uid://dl7odshvd5bgn" path="res://Sprint-Switch/Assets/fonts/PixelOperator8-Bold.ttf" id="2_4sdia"]
 
 [sub_resource type="GDScript" id="GDScript_85ut6"]
 script/source = "extends Control
@@ -9,14 +9,14 @@ script/source = "extends Control
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(\"return_to_previous_window\"):
-		get_tree().change_scene_to_packed(load(\"res://Switch-Sprint/scenes/Menus/main_menu.tscn\"))
+		get_tree().change_scene_to_packed(load(\"res://Sprint-Switch/scenes/Menus/main_menu.tscn\"))
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	story.button_down.connect(load_levels)
 	
 func load_levels() -> void:
-	get_tree().change_scene_to_packed(preload(\"res://Switch-Sprint/scenes/Levels/multiplayer_level.tscn\"))
+	get_tree().change_scene_to_packed(preload(\"res://Sprint-Switch/scenes/Levels/multiplayer_level.tscn\"))
 "
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qtd4q"]

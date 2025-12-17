@@ -3,7 +3,7 @@ extends Control
 @onready var single_player: Button = $SinglePlayer
 @onready var mult: Button = $Multiplayer
 @onready var options: Button = $Options
-const SINGLE_PLAYER_SCREEN = preload("res://Switch-Sprint/scenes/Menus/single_player_screen.tscn")
+const SINGLE_PLAYER_SCREEN = preload("res://Sprint-Switch/scenes/Menus/single_player_screen.tscn")
 
 func _ready() -> void:
 	single_player.button_down.connect(_on_single_player_pressed)
@@ -19,8 +19,8 @@ func _on_single_player_pressed() -> void:
 
 
 func _on_multiplayer_pressed() -> void:
-	get_tree().change_scene_to_packed(preload(("res://Switch-Sprint/scenes/Menus/multilayer_screen.tscn")))
+	get_tree().change_scene_to_packed(preload(("res://Sprint-Switch/scenes/Menus/multilayer_screen.tscn")))
 
 
 func _on_option_pressed() -> void:
-	get_tree().change_scene_to_packed(preload("res://Switch-Sprint/scenes/Menus/options.tscn"))
+	get_tree().change_scene_to_packed(preload("res://Sprint-Switch/scenes/Menus/options.tscn"))

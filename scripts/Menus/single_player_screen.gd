@@ -9,4 +9,4 @@ func _ready() -> void:
 	story.button_down.connect(load_levels)
 
 func load_levels() -> void:
-	get_tree().change_scene_to_packed(preload("res://Switch-Sprint/scenes/Levels/level_1.tscn"))
+	get_tree().change_scene_to_packed(preload("res://Sprint-Switch/scenes/Levels/level_1.tscn"))

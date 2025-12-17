@@ -1,27 +1,35 @@
-[gd_scene load_steps=13 format=3 uid="uid://636pxni4vlrd"]
+[gd_scene load_steps=14 format=3 uid="uid://636pxni4vlrd"]
 
-[ext_resource type="PackedScene" uid="uid://b0ey48pi66kyk" path="res://mult_player.tscn" id="2_1vm1x"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/PlayerSkeleton.gd" id="2_35grx"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/camera_2d.gd" id="2_q6g3y"]
-[ext_resource type="PackedScene" uid="uid://bqwjgydso5cn7" path="res://Switch-Sprint/scenes/Players/player1.tscn" id="3_wpjwg"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/base_player.gd" id="4_6o0qy"]
-[ext_resource type="PackedScene" uid="uid://dhw5ci1fgl5gj" path="res://Switch-Sprint/scenes/Players/player_2.tscn" id="5_6ug13"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/player_2.gd" id="6_hj8nv"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/player_1.gd" id="6_lau26"]
-[ext_resource type="PackedScene" uid="uid://jt37txn30o4o" path="res://Switch-Sprint/scenes/Players/player_3.tscn" id="7_o0gdt"]
-[ext_resource type="Script" path="res://Switch-Sprint/scripts/Players/player_3.gd" id="8_pd2bi"]
-[ext_resource type="PackedScene" uid="uid://b7i01c5bmo174" path="res://Switch-Sprint/scenes/base_player.tscn" id="8_wdhln"]
-[ext_resource type="PackedScene" uid="uid://bcr32ln6l4the" path="res://Switch-Sprint/scenes/camera_movement.tscn" id="9_plef4"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/Players/PlayerSkeleton.gd" id="2_35grx"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/kill_zones.gd" id="2_q6g3y"]
+[ext_resource type="PackedScene" uid="uid://bqwjgydso5cn7" path="res://Sprint-Switch/scenes/Players/player1.tscn" id="3_wpjwg"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/Players/PlayerBase.gd" id="4_2c1gi"]
+[ext_resource type="PackedScene" uid="uid://dhw5ci1fgl5gj" path="res://Sprint-Switch/scenes/Players/player_2.tscn" id="5_6ug13"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/Players/player_2.gd" id="6_hj8nv"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/Players/player_1.gd" id="6_lau26"]
+[ext_resource type="PackedScene" uid="uid://jt37txn30o4o" path="res://Sprint-Switch/scenes/Players/player_3.tscn" id="7_o0gdt"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/Players/player_3.gd" id="8_pd2bi"]
+[ext_resource type="PackedScene" uid="uid://b7i01c5bmo174" path="res://Sprint-Switch/scenes/base_player.tscn" id="8_wdhln"]
+[ext_resource type="PackedScene" uid="uid://bcr32ln6l4the" path="res://Sprint-Switch/scenes/camera_movement.tscn" id="9_plef4"]
+[ext_resource type="Script" path="res://Sprint-Switch/scripts/Players/camera_movement.gd" id="11_qyiup"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otd1b"]
+size = Vector2(5, 500)
 
 [node name="Level Template" type="Node"]
+
+[node name="MultPlayer" parent="." instance=ExtResource("5_6ug13")]
+visible = false
+texture_filter = 1
+position = Vector2(-7, 0.25)
+scale = Vector2(3, 3)
+collision_layer = 6
+script = ExtResource("4_2c1gi")
 
 [node name="Player Skeletton" parent="." instance=ExtResource("8_wdhln")]
 script = ExtResource("2_35grx")
 
-[node name="MultPlayer" parent="Player Skeletton" instance=ExtResource("2_1vm1x")]
-
 [node name="Player1" parent="Player Skeletton" instance=ExtResource("3_wpjwg")]
-visible = false
 z_index = 99
 texture_filter = 1
 position = Vector2(-7, 0.25)
@@ -47,9 +55,10 @@ collision_layer = 6
 script = ExtResource("8_pd2bi")
 
 [node name="Camera Movement" parent="Player Skeletton" instance=ExtResource("9_plef4")]
-script = ExtResource("4_6o0qy")
+script = ExtResource("11_qyiup")
 
 [node name="Camera2D" type="Camera2D" parent="Player Skeletton/Camera Movement"]
+visible = false
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-1.04904e-05, 1.04308e-07)
@@ -59,3 +68,12 @@ position_smoothing_enabled = true
 position_smoothing_speed = 130.0
 rotation_smoothing_enabled = true
 script = ExtResource("2_q6g3y")
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 5
+position = Vector2(5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 5
+shape = SubResource("RectangleShape2D_otd1b")
+debug_color = Color(0.689815, 0.491877, 0.223069, 0.42)
